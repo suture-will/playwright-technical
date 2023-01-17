@@ -5,10 +5,17 @@ import { useState } from 'react';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
-  const [count, setCount] = useState(0);
+  const [pokemon, setPokemon] = useState([]);
+  const [image, setImage] = useState('');
 
-  const handleSubmit = () => {
-    setCount(count + 1);
+  const handleSubmit = async () => {
+    fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setPokemon(data.abilities);
+        setImage(data.sprites.front_default);
+      });
   };
   return (
     <div className={styles.container}>
@@ -29,12 +36,39 @@ export default function Home() {
           }}
         >
           <h1 className={styles.title}>Suture Health Demo</h1>
-          <h3>{count}</h3>
+          <h2>Dittos Abilities:</h2>
+          <div
+            style={{
+              display: 'flex',
+              direction: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '200px',
+              height: '100px',
+            }}
+          >
+            <img src={image} />
+            {pokemon.map((item) => {
+              return (
+                <div
+                  key={item.ability.name}
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: '10px',
+                  }}
+                >
+                  <p>{item.ability.name}</p>
+                </div>
+              );
+            })}
+          </div>
           <button
             style={{ backgroundColor: '#1E6BE8', color: '#FFFFFF', w: '200px', h: '80px' }}
             onClick={() => handleSubmit()}
           >
-            Increment
+            Get Ditto Data
           </button>
         </div>
       </main>
