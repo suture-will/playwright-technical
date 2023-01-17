@@ -17,7 +17,8 @@ test('navigate to page and verify', async ({ page }) => {
   })
 
 
-// For this test: ensure that on button click: data is fetched and displayed properly. Verify that the page displays the ability 'limber' in a <p> tag.
+// For this test: ensure that on button click: data is fetched and displayed properly. 
+// Verify that the page displays the ability 'limber' in a <p> tag after the button is clicked.
   test('should fetch and display Ditto abilities', async ({ browser, page }) => {
  
     // code here...
