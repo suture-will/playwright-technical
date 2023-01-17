@@ -59,7 +59,7 @@ export default function Home() {
                     padding: '10px',
                   }}
                 >
-                  <p>{item.ability.name}</p>
+                  <p data-testid='ditto-abilities'>{item.ability.name}</p>
                 </div>
               );
             })}
@@ -67,6 +67,7 @@ export default function Home() {
           <button
             style={{ backgroundColor: '#1E6BE8', color: '#FFFFFF', w: '200px', h: '80px' }}
             onClick={() => handleSubmit()}
+            id='get-ditto-data'
           >
             Get Ditto Data
           </button>

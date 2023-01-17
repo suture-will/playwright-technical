@@ -5,7 +5,7 @@ import path from 'path'
 const PORT = process.env.PORT || 3000
 
 // Set webServer.url and use.baseURL with the location of the WebServer respecting the correct set port
-const baseURL = `http://localhost:${PORT}`
+const baseURL = `https://playwright-technical.vercel.app/` //`http://localhost:${PORT}` (use this for localhost)
 
 // Reference: https://playwright.dev/docs/test-configuration
 const config: PlaywrightTestConfig = {
