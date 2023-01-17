@@ -16,7 +16,7 @@ test('navigate to page and verify', async ({ page }) => {
   })
 
 
-// for this test: click the button and verify that the page contains certain elements
+// for this test: click the button and verify that the page displays the data that is fetched from the pokemon api properly
   test('should fetch and display Ditto abilities', async ({ browser, page }) => {
  
     // code here...
