@@ -58,8 +58,11 @@ export default function Home() {
                     alignItems: 'center',
                     padding: '10px',
                   }}
+                  id='ability-container'
                 >
-                  <p data-testid='ditto-abilities'>{item.ability.name}</p>
+                  <p data-testid='ditto-abilities' id='ability'>
+                    {item.ability.name}
+                  </p>
                 </div>
               );
             })}
